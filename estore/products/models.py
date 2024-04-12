@@ -12,6 +12,7 @@ class Category (BaseModel):
 class Product(BaseModel): 
     product_name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, null=True, blank=True)
+    product_description = models.TextField()
     category = models.ForeignKey(Category , on_delete=models.CASCADE, related_name="products")
     price = models.IntegerField()
 
